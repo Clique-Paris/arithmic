@@ -4,12 +4,21 @@ import 'package:arithmic/src/templates/settings_page_template.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class HomePageTemplate extends StatefulWidget {
+class SlidingSettingsMenuPageTemplate extends StatefulWidget {
+  final Widget child;
+
+  const SlidingSettingsMenuPageTemplate({
+    Key key,
+    @required this.child,
+  });
+
   @override
-  _HomePageTemplateState createState() => _HomePageTemplateState();
+  _SlidingSettingsMenuPageTemplateState createState() =>
+      _SlidingSettingsMenuPageTemplateState();
 }
 
-class _HomePageTemplateState extends State<HomePageTemplate> {
+class _SlidingSettingsMenuPageTemplateState
+    extends State<SlidingSettingsMenuPageTemplate> {
   SettingsButtonService _settingsService;
   Size deviceSize;
 
@@ -26,12 +35,11 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
         Provider.of<SettingsButtonService>(context, listen: true);
     return Stack(
       children: [
-        // TODO: Change with positioned widgets and add animation
         Positioned(
             top: 0,
             width: deviceSize.width,
             height: deviceSize.height,
-            child: HomePageContent()),
+            child: widget.child),
         AnimatedPositioned(
             width: deviceSize.width,
             height: deviceSize.height,
