@@ -1,7 +1,6 @@
-import 'package:arithmic/src/services/theme_service.dart';
 import 'package:arithmic/src/templates/header.dart';
+import 'package:arithmic/src/templates/home_page_template.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -9,16 +8,6 @@ class HomePage extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: Header(height: 100),
-      body: Column(
-        children: [
-          Expanded(
-              child: Center(
-            child: Text('Hello world!'),
-          ))
-        ],
-      ),
-    );
+    return Scaffold(appBar: Header(height: 100), body: HomePageTemplate());
   }
 }
