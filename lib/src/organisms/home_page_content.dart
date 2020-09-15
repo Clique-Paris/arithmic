@@ -1,3 +1,4 @@
+import 'package:arithmic/src/molecules/home_page_buttons_list.dart';
 import 'package:flutter/material.dart';
 
 /// widget contains all internal elements of the home page
@@ -7,7 +8,13 @@ class HomePageContent extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    // TODO: Add real elements of the home page
-    return Container(child: Text('THIS IS MAIN PAGE'));
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Center(child: Text('ARITHMIC LOGO HERE')),
+        HomePageButtonsList(),
+      ],
+    );
   }
 }
