@@ -1,4 +1,5 @@
 import 'package:arithmic/src/services/settings_button_service.dart';
+import 'package:arithmic/src/templates/settings_page_template.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -9,32 +10,33 @@ class HomePageTemplate extends StatefulWidget {
 
 class _HomePageTemplateState extends State<HomePageTemplate> {
   SettingsButtonService _settingsService;
+  Size deviceSize;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    this.deviceSize = MediaQuery.of(context).size;
+
     _settingsService =
         Provider.of<SettingsButtonService>(context, listen: true);
-    return IndexedStack(
-      index: (_settingsService.isOpen ? 1 : 0),
+    return Stack(
       children: [
         // TODO: Change with positioned widgets and add animation
-        Column(
-          children: [
-            Expanded(
-              child: Center(
-                child: Text('Settings closed'),
-              ),
-            )
-          ],
-        ),
-        Column(
-          children: [
-            Expanded(
-              child: Center(
-                child: Text('Settings open'),
-              ),
-            )
-          ],
-        ),
+        Positioned(
+            top: 0,
+            width: deviceSize.width,
+            height: deviceSize.height,
+            child: Container(child: Text('THIS IS MAIN PAGE'))),
+        AnimatedPositioned(
+            width: deviceSize.width,
+            height: deviceSize.height,
+            duration: Duration(milliseconds: 500),
+            top: (_settingsService.isOpen ? 0 : deviceSize.height),
+            child: SettingsPageTemplate()),
       ],
     );
   }
