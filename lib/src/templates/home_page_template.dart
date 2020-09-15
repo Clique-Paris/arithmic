@@ -1,3 +1,4 @@
+import 'package:arithmic/src/organisms/home_page_content.dart';
 import 'package:arithmic/src/services/settings_button_service.dart';
 import 'package:arithmic/src/templates/settings_page_template.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
             top: 0,
             width: deviceSize.width,
             height: deviceSize.height,
-            child: Container(child: Text('THIS IS MAIN PAGE'))),
+            child: HomePageContent()),
         AnimatedPositioned(
             width: deviceSize.width,
             height: deviceSize.height,
