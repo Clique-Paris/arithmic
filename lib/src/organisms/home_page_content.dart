@@ -8,6 +8,6 @@ class HomePageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: Add real elements of the home page
-    return Container(child: Text('THIS IS MAIN PAGE')));
+    return Container(child: Text('THIS IS MAIN PAGE'));
   }
 }
