@@ -21,10 +21,11 @@ class _SlidingSettingsMenuPageTemplateState
     extends State<SlidingSettingsMenuPageTemplate> {
   SettingsButtonService _settingsService;
   Size deviceSize;
-
+  double delta;
   @override
   void initState() {
     super.initState();
+    delta = 0;
   }
 
   @override
@@ -33,6 +34,9 @@ class _SlidingSettingsMenuPageTemplateState
 
     _settingsService =
         Provider.of<SettingsButtonService>(context, listen: true);
+    if (_settingsService.isOpen == false) {
+      this.delta = 0;
+    }
     return Stack(
       children: [
         Positioned(
@@ -44,8 +48,17 @@ class _SlidingSettingsMenuPageTemplateState
             width: deviceSize.width,
             height: deviceSize.height,
             duration: Duration(milliseconds: 500),
-            top: (_settingsService.isOpen ? 0 : deviceSize.height),
-            child: SettingsPageTemplate()),
+            top: (_settingsService.isOpen ? delta : deviceSize.height),
+            child: SettingsPageTemplate(
+              onDrag: (double d) {
+                setState(() {
+                  delta = (delta + d < 0) ? 0 : delta + d;
+                  if (delta > (this.deviceSize.height / 3)) {
+                    _settingsService.onClick();
+                  }
+                });
+              },
+            )),
       ],
     );
   }

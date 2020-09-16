@@ -5,9 +5,8 @@ import 'package:provider/provider.dart';
 
 /// Widget contains a template declaration for settings page template
 class SettingsPageTemplate extends StatelessWidget {
-  const SettingsPageTemplate({
-    Key key,
-  });
+  final ValueChanged<double> onDrag;
+  const SettingsPageTemplate({Key key, @required this.onDrag});
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +16,16 @@ class SettingsPageTemplate extends StatelessWidget {
         Provider.of<SettingsButtonService>(context, listen: false);
     return GestureDetector(
         onVerticalDragStart: (DragStartDetails details) {
-          _posStart = details.globalPosition;
+          // _posStart = details.globalPosition;R
         },
         onVerticalDragUpdate: (DragUpdateDetails details) {
           _posEnd = details.globalPosition;
+          onDrag(details.delta.dy);
         },
         onVerticalDragEnd: (DragEndDetails details) {
-          if (((_posEnd.dy - _posStart.dy) / _deviceSize.height) > 0.5) {
-            _settingsButtonService.onClick();
-          }
+          // if (((_posEnd.dy - _posStart.dy) / _deviceSize.height) > 0.5) {
+          //   _settingsButtonService.onClick();
+          // }
         },
         child: Container(
           color: Colors.red,
