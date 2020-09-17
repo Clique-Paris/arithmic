@@ -4,15 +4,35 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 /// Widget contains a template declaration for settings page template
-class SettingsPageTemplate extends StatelessWidget {
-  final ValueChanged<double> onDrag;
-  const SettingsPageTemplate({Key key, @required this.onDrag});
+class SettingsPageTemplate extends StatefulWidget {
+  const SettingsPageTemplate({Key key});
+
+  _SettingsPageTemplateState createState() => _SettingsPageTemplateState();
+}
+
+class _SettingsPageTemplateState extends State<SettingsPageTemplate> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
+    Size deviceSize = MediaQuery.of(context).size;
+    SettingsButtonService _settingsService =
+        Provider.of<SettingsButtonService>(context, listen: true);
+
     return GestureDetector(
+        onVerticalDragStart: (DragStartDetails details) {},
+        onVerticalDragEnd: (DragEndDetails details) {
+          if (_settingsService.top < deviceSize.height / 3) {
+            _settingsService.top = 0;
+          } else {
+            _settingsService.onClick();
+          }
+        },
         onVerticalDragUpdate: (DragUpdateDetails details) {
-          onDrag(details.delta.dy);
+          _settingsService.top = _settingsService.top + details.delta.dy;
         },
         child: Container(
           color: Colors.red,

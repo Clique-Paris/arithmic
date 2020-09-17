@@ -1,3 +1,4 @@
+import 'package:arithmic/src/atoms/app_name_text.dart';
 import 'package:arithmic/src/atoms/change_theme_button.dart';
 import 'package:arithmic/src/atoms/settings_button.dart';
 import 'package:arithmic/src/services/theme_service.dart';
@@ -23,6 +24,6 @@ class _HeaderState extends State<Header> {
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [SettingsButton(), ChangeThemeButton()]));
+            children: [SettingsButton(), AppNameText(), ChangeThemeButton()]));
   }
 }

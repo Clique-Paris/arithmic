@@ -12,7 +12,7 @@ class HomePageContent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Center(child: Text('ARITHMIC LOGO HERE')),
+        Center(child: Image.asset('assets/logo.png')),
         HomePageButtonsList(),
       ],
     );
