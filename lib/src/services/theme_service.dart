@@ -23,6 +23,14 @@ class ThemeService extends ChangeNotifier {
     }
   }
 
+  bool get isDarkMode {
+    return this.currentTheme.brightness == Brightness.dark;
+  }
+
+  bool get isLightMode {
+    return this.currentTheme.brightness == Brightness.light;
+  }
+
   void darkMode() {
     this.currentTheme = darkTheme;
     notifyListeners();
