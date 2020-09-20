@@ -1,5 +1,6 @@
 import 'package:arithmic/src/organisms/settings_page_content.dart';
 import 'package:arithmic/src/services/settings_button_service.dart';
+import 'package:arithmic/src/services/theme_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,6 +19,7 @@ class _SettingsPageTemplateState extends State<SettingsPageTemplate> {
 
   @override
   Widget build(BuildContext context) {
+    ThemeService _ts = Provider.of<ThemeService>(context, listen: true);
     Size deviceSize = MediaQuery.of(context).size;
     SettingsButtonService _settingsService =
         Provider.of<SettingsButtonService>(context, listen: true);
@@ -35,7 +37,7 @@ class _SettingsPageTemplateState extends State<SettingsPageTemplate> {
           _settingsService.top = _settingsService.top + details.delta.dy;
         },
         child: Container(
-          color: Colors.red,
+          color: Theme.of(context).scaffoldBackgroundColor,
           child: SafeArea(
             child: SettingsPageContent(),
           ),
