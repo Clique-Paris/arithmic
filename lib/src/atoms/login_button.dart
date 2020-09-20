@@ -1,3 +1,4 @@
+import 'package:arithmic/src/pages/login_dialog.dart';
 import 'package:flutter/material.dart';
 
 /// Widget contains the login button definition
@@ -10,7 +11,8 @@ class LoginButton extends StatelessWidget {
     return IconButton(
       icon: Icon(Icons.account_circle),
       onPressed: () {
-        print('Cicked on settings button');
+        showDialog(
+            context: context, builder: (BuildContext context) => LoginDialog());
       },
     );
   }
