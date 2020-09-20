@@ -8,7 +8,9 @@ class SettingsPageFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [Text('This will be settings template footer')],
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [Text('© 2020 Makepad All rights reserved')],
     );
   }
 }
