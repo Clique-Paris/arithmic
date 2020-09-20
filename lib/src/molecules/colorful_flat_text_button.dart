@@ -1,5 +1,6 @@
 import 'package:arithmic/src/atoms/colorful_flat_button.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 /// Widget contains home page button implementation
 class ColorfulFlatTextButton extends StatelessWidget {
@@ -16,7 +17,7 @@ class ColorfulFlatTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ColorfulFlatButton(
-        child: Center(child: Text(this.text)),
+        child: Center(child: Text(this.text, style: GoogleFonts.robotoMono())),
         onPressed: this.onPressed,
         color: this.color);
   }
