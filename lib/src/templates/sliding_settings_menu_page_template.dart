@@ -1,4 +1,3 @@
-import 'package:arithmic/src/organisms/home_page_content.dart';
 import 'package:arithmic/src/services/settings_button_service.dart';
 import 'package:arithmic/src/templates/settings_page_template.dart';
 import 'package:flutter/material.dart';
