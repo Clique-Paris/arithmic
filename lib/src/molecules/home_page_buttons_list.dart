@@ -1,4 +1,4 @@
-import 'package:arithmic/src/atoms/colorful_flat_button.dart';
+import 'package:arithmic/src/molecules/colorful_flat_text_button.dart';
 import 'package:arithmic/src/pages/training_page.dart';
 import 'package:flutter/material.dart';
 
@@ -11,20 +11,20 @@ class HomePageButtonsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ColorfulFlatButton(
+        ColorfulFlatTextButton(
             color: Colors.red,
             text: 'Training',
             onPressed: () {
               Navigator.pushNamed(context, TrainingPage.routeName);
             }),
-        ColorfulFlatButton(
+        ColorfulFlatTextButton(
             color: Colors.yellow,
             text: 'Competition',
             onPressed: () {
               print('Competition mode selected');
             }),
-        ColorfulFlatButton(
-          color: Colors.orange,
+        ColorfulFlatTextButton(
+          color: Colors.green,
           text: 'PvP',
           onPressed: () {
             print('PvP mode selected');
