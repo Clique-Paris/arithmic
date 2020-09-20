@@ -1,3 +1,4 @@
+import 'package:arithmic/src/molecules/change_theme_button.dart';
 import 'package:flutter/material.dart';
 
 /// Widget contains all buttons of the settings app
@@ -8,9 +9,9 @@ class SettingsPageButtonsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      // TODO: Update with real buttons list
-      child: Center(
-        child: Text('Settings page'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [ChangeThemeButton()],
       ),
     );
   }
