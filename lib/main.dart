@@ -1,4 +1,5 @@
 import 'package:arithmic/main_app.dart';
+import 'package:arithmic/src/services/login_service.dart';
 import 'package:arithmic/src/services/settings_button_service.dart';
 import 'package:arithmic/src/services/theme_service.dart';
 import 'package:arithmic/src/themes.dart';
@@ -16,6 +17,7 @@ void main() {
     ChangeNotifierProvider(
         create: (context) =>
             ThemeService(darkTheme: Themes.dark, lightTheme: Themes.light)),
-    ChangeNotifierProvider(create: (context) => SettingsButtonService())
+    ChangeNotifierProvider(create: (context) => SettingsButtonService()),
+    ChangeNotifierProvider(create: (context) => LoginService())
   ], child: MainApp()));
 }
