@@ -1,6 +1,5 @@
 import 'package:arithmic/src/atoms/colorful_flat_button.dart';
 import 'package:arithmic/src/services/theme_service.dart';
-import 'package:arithmic/src/structs/theme_type.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -30,8 +29,8 @@ class _ChangeThemeButtonState extends State<ChangeThemeButton> {
       ),
       onPressed: () => _themeService.changeMode(),
       color: _themeService.isDarkMode
-          ? _themeService.lightTheme.backgroundColor
-          : _themeService.darkTheme.backgroundColor,
+          ? _themeService.lightTheme.scaffoldBackgroundColor
+          : _themeService.darkTheme.scaffoldBackgroundColor,
     );
   }
 }
