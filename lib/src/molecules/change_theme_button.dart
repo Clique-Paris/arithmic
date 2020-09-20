@@ -1,4 +1,5 @@
 import 'package:arithmic/src/atoms/colorful_flat_button.dart';
+import 'package:arithmic/src/atoms/roboto_mono_text.dart';
 import 'package:arithmic/src/services/theme_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -21,7 +22,7 @@ class _ChangeThemeButtonState extends State<ChangeThemeButton> {
             _themeService.isDarkMode ? Icons.wb_sunny : Icons.brightness_2,
           ),
           Expanded(
-              child: Text(
+              child: RobotoMonoText(
             "${_themeService.isDarkMode ? 'Light' : 'Dark'} mode",
             textAlign: TextAlign.center,
           ))

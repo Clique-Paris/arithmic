@@ -1,4 +1,5 @@
 import 'package:arithmic/src/atoms/colorful_flat_button.dart';
+import 'package:arithmic/src/atoms/roboto_mono_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -17,7 +18,7 @@ class ColorfulFlatTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ColorfulFlatButton(
-        child: Center(child: Text(this.text, style: GoogleFonts.robotoMono())),
+        child: Center(child: RobotoMonoText(this.text)),
         onPressed: this.onPressed,
         color: this.color);
   }

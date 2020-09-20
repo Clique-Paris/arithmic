@@ -1,3 +1,4 @@
+import 'package:arithmic/src/atoms/roboto_mono_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,9 +9,9 @@ class AppNameText extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return RobotoMonoText(
       "Arithmic",
-      style: GoogleFonts.robotoMono(textStyle: TextStyle(fontSize: 24)),
+      fontSize: 24,
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:arithmic/src/atoms/roboto_mono_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,9 +13,8 @@ class SettingsPageFooter extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
+        RobotoMonoText(
           '© 2020 Makepad All rights reserved',
-          style: GoogleFonts.robotoMono(),
         )
       ],
     );
