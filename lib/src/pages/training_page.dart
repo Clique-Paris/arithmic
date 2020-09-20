@@ -1,4 +1,5 @@
-import 'package:arithmic/src/organisms/training_page_content.dart';
+import 'package:arithmic/src/molecules/training_page_buttons_list.dart';
+import 'package:arithmic/src/templates/title_with_button_list_template.dart';
 import 'package:arithmic/src/services/settings_button_service.dart';
 import 'package:arithmic/src/templates/header.dart';
 import 'package:arithmic/src/templates/sliding_settings_menu_page_template.dart';
@@ -16,6 +17,9 @@ class TrainingPage extends StatelessWidget {
         Provider.of<SettingsButtonService>(context, listen: true);
     return Scaffold(
         appBar: _ss.isOpen ? null : Header(height: 100),
-        body: SlidingSettingsMenuPageTemplate(child: TrainingPageContent()));
+        body: SlidingSettingsMenuPageTemplate(
+            child: TitleWithButtonListTemplate(
+                title: "Choose a training subject",
+                child: TrainingPageButtonsList())));
   }
 }
