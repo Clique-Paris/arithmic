@@ -1,4 +1,4 @@
-import 'package:arithmic/src/atoms/close_settings_page_button.dart';
+import 'package:arithmic/src/molecules/close_settings_page_button.dart';
 import 'package:flutter/material.dart';
 
 /// description
