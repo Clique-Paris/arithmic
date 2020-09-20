@@ -1,4 +1,3 @@
-import 'package:arithmic/src/molecules/colorful_flat_text_button.dart';
 import 'package:arithmic/src/molecules/training_page_buttons_list.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,7 +16,7 @@ class TrainingPageContent extends StatelessWidget {
         Expanded(
             flex: 2,
             child: Center(
-                child: Text("Training subject:",
+                child: Text("Choose a training subject",
                     style: GoogleFonts.robotoMono(fontSize: 24)))),
         Expanded(
           flex: 3,
