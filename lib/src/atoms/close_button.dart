@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 /// description
-class CloseSettingsPageButton extends StatelessWidget {
+class CloseButton extends StatelessWidget {
   final VoidCallback onPressed;
-  const CloseSettingsPageButton({Key key, @required this.onPressed});
+  const CloseButton({Key key, @required this.onPressed});
   @override
   Widget build(BuildContext context) {
     return IconButton(icon: Icon(Icons.close), onPressed: onPressed);

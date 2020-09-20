@@ -1,5 +1,6 @@
+import 'package:arithmic/src/atoms/close_button.dart';
 import 'package:arithmic/src/services/settings_button_service.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide CloseButton;
 import 'package:provider/provider.dart';
 
 /// Widget represents the button for closing the settings pages
