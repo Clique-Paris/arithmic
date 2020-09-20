@@ -1,4 +1,5 @@
 import 'package:arithmic/src/molecules/colorful_flat_text_button.dart';
+import 'package:arithmic/src/pages/algebra_page.dart';
 import 'package:flutter/material.dart';
 
 /// Widget contains all buttons in the training page
@@ -14,9 +15,9 @@ class TrainingPageButtonsList extends StatelessWidget {
       children: [
         ColorfulFlatTextButton(
           color: Colors.red,
-          text: 'Basics of algebra',
+          text: 'Algebra',
           onPressed: () {
-            print('Selected basics of algebra');
+            Navigator.pushNamed(context, AlgebraPage.routeName);
           },
         ),
         ColorfulFlatTextButton(
