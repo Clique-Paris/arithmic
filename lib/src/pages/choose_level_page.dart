@@ -4,8 +4,9 @@ import 'package:arithmic/src/templates/title_with_button_list_template.dart';
 import 'package:flutter/material.dart';
 
 /// widget contains all elements for the choose level page
-class ChooseLevePage extends StatelessWidget {
-  const ChooseLevePage({
+class ChooseLevelPage extends StatelessWidget {
+  static String routeName = "/choose-level";
+  const ChooseLevelPage({
     Key key,
   });
   @override
