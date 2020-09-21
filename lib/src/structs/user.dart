@@ -1,27 +1,43 @@
-import 'package:flutter/foundation.dart';
 import 'package:uuid/uuid.dart';
 
 class User {
   final String id;
-  final String username;
-  String fullName;
-  String email;
+  String _username;
+  String _fullName;
+  String _email;
+  int level;
+  double point;
+  User() : this.id = Uuid().v4() {
+    this.level = 0;
+    this.point = 0;
+  }
 
-  User(
-      {@required this.username,
-      String firstName,
-      String lastName,
-      @required this.email})
-      : this.id = Uuid().v4() {
-    this.fullName = '$firstName $lastName';
+  String get username {
+    return this._username;
+  }
+
+  String get fullName {
+    return this._fullName;
+  }
+
+  String get email {
+    return this._email;
+  }
+
+  set changeUserName(String u) {
+    this._username = u;
+  }
+
+  void changeFullName({String firstName, String lastName}) {
+    this._fullName = '$firstName $lastName';
   }
 
   Map<String, dynamic> toMap() {
     return {
       'id': this.id,
-      'username': this.username,
-      'fullName': this.fullName,
-      'email': this.email
+      'username': this._username,
+      'fullName': this._fullName,
+      'email': this._email
     };
   }
 }
