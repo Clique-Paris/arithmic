@@ -1,7 +1,9 @@
 import 'package:arithmic/main_app.dart';
 import 'package:arithmic/src/services/login_service.dart';
+import 'package:arithmic/src/services/session_service.dart';
 import 'package:arithmic/src/services/settings_button_service.dart';
 import 'package:arithmic/src/services/theme_service.dart';
+import 'package:arithmic/src/structs/user.dart';
 import 'package:arithmic/src/themes.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +20,7 @@ void main() {
         create: (context) =>
             ThemeService(darkTheme: Themes.dark, lightTheme: Themes.light)),
     ChangeNotifierProvider(create: (context) => SettingsButtonService()),
-    ChangeNotifierProvider(create: (context) => LoginService())
+    ChangeNotifierProvider(create: (context) => LoginService()),
+    ChangeNotifierProvider(create: (context) => SessionService(user: User()))
   ], child: MainApp()));
 }
