@@ -2,37 +2,40 @@ import 'package:arithmic/src/molecules/colorful_flat_text_button.dart';
 import 'package:arithmic/src/pages/training_page.dart';
 import 'package:arithmic/src/services/session_service.dart';
 import 'package:arithmic/src/structs/game_mode.dart';
+import 'package:arithmic/src/utils/types.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 /// Widget contains all buttons on the home page
 class HomePageButtonsList extends StatelessWidget {
-  const HomePageButtonsList({
-    Key key,
-  });
+  final ValueCallback<GameMode> onClick;
+  const HomePageButtonsList({Key key, @required this.onClick});
   @override
   Widget build(BuildContext context) {
-    SessionService _ss = Provider.of<SessionService>(context, listen: true);
     return Column(
       children: [
         ColorfulFlatTextButton(
             color: Colors.red,
             text: 'Training',
             onPressed: () {
-              _ss.currentGameMode = GameMode.training;
-              Navigator.pushNamed(context, TrainingPage.routeName);
+              this.onClick(GameMode.training);
             }),
         ColorfulFlatTextButton(
-            color: Colors.yellow,
+          text: 'Adventure',
+          color: Colors.yellow,
+          onPressed: () => this.onClick(GameMode.adventure),
+        ),
+        ColorfulFlatTextButton(
+            color: Colors.green,
             text: 'Competition',
             onPressed: () {
-              print('Competition mode selected');
+              this.onClick(GameMode.competition);
             }),
         ColorfulFlatTextButton(
-          color: Colors.green,
+          color: Colors.blue,
           text: 'PvP',
           onPressed: () {
-            print('PvP mode selected');
+            this.onClick(GameMode.pvp);
           },
         )
       ],

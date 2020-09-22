@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum SubCategory { basic_operations, power, equation_solving, random }
 
 extension SubCategoryResolver on SubCategory {

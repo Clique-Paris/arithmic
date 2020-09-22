@@ -1,3 +1,5 @@
+import 'package:flutter/widgets.dart';
+
 enum Difficulty { beginner, intermetidate, advanced, challenger }
 
 extension DifficultyResolver on Difficulty {
