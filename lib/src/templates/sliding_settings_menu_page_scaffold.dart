@@ -4,21 +4,21 @@ import 'package:arithmic/src/templates/settings_page_template.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SlidingSettingsMenuPageScaffoldTemplate extends StatefulWidget {
+class SlidingSettingsMenuPageScaffold extends StatefulWidget {
   final Widget child;
 
-  const SlidingSettingsMenuPageScaffoldTemplate({
+  const SlidingSettingsMenuPageScaffold({
     Key key,
     @required this.child,
   });
 
   @override
-  _SlidingSettingsMenuPageScaffoldTemplateState createState() =>
-      _SlidingSettingsMenuPageScaffoldTemplateState();
+  _SlidingSettingsMenuPageScaffoldState createState() =>
+      _SlidingSettingsMenuPageScaffoldState();
 }
 
-class _SlidingSettingsMenuPageScaffoldTemplateState
-    extends State<SlidingSettingsMenuPageScaffoldTemplate> {
+class _SlidingSettingsMenuPageScaffoldState
+    extends State<SlidingSettingsMenuPageScaffold> {
   SettingsButtonService _settingsService;
   Size deviceSize;
   double delta;

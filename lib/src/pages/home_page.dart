@@ -1,5 +1,5 @@
 import 'package:arithmic/src/organisms/home_page_content.dart';
-import 'package:arithmic/src/templates/sliding_settings_menu_page_scaffold_template.dart';
+import 'package:arithmic/src/templates/sliding_settings_menu_page_scaffold.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,6 +10,6 @@ class HomePage extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return SlidingSettingsMenuPageScaffoldTemplate(child: HomePageContent());
+    return SlidingSettingsMenuPageScaffold(child: HomePageContent());
   }
 }
