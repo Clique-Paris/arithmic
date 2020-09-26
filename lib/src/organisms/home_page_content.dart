@@ -1,3 +1,4 @@
+import 'package:arithmic/src/atoms/arithmic_logo.dart';
 import 'package:arithmic/src/molecules/home_page_buttons_list.dart';
 import 'package:arithmic/src/services/session_service.dart';
 import 'package:arithmic/src/services/theme_service.dart';
@@ -18,10 +19,7 @@ class HomePageContent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Center(
-            child: Image.asset(_ts.isDarkMode
-                ? 'assets/dark_mode_logo.png'
-                : 'assets/logo.png')),
+        Center(child: ArithmicLogo()),
         HomePageButtonsList(onClick: (GameMode m) {
           _ss.currentGameMode = m;
           m.navigate(context);
