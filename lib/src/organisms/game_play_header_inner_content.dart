@@ -1,5 +1,4 @@
-import 'package:arithmic/src/atoms/arithmic_logo.dart';
-import 'package:arithmic/src/atoms/colored_app_name.dart';
+import 'package:arithmic/src/organisms/game_play_header_inner_header.dart';
 import 'package:arithmic/src/services/theme_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,36 +17,7 @@ class GamePlayHeaderInnerContent extends StatelessWidget {
         width: _deviceSize.width,
         child: SafeArea(
             child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                    flex: 2,
-                    child: IconButton(
-                      icon: Icon(Icons.settings),
-                      onPressed: () {
-                        print('Tapped on game play header settings button');
-                      },
-                    )),
-                Expanded(
-                    flex: 5,
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [ColoredAppName()])),
-                Expanded(
-                    flex: 2,
-                    child: IconButton(
-                      icon: Icon(Icons.close),
-                      onPressed: () {
-                        print('Pressed on game play header close button');
-                      },
-                    ))
-              ],
-            )
-          ],
+          children: [GamePlayHeaderInnerHeader()],
         )));
   }
 }
