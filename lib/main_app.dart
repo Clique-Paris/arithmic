@@ -1,5 +1,5 @@
 import 'package:arithmic/src/services/theme_service.dart';
-import 'package:arithmic/src/utils/router.dart';
+import 'package:arithmic/src/utils/router.dart' as CustomRouter;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       theme: _themeService.currentTheme,
       darkTheme: _themeService.darkTheme,
-      routes: Router.routes,
+      routes: CustomRouter.Router.routes,
       initialRoute: '/home',
     );
   }
