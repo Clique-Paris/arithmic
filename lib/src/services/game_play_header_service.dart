@@ -15,4 +15,9 @@ class GamePlayHeaderService extends ChangeNotifier {
     this._isOpen = !this._isOpen;
     notifyListeners();
   }
+
+  void close() {
+    this._isOpen = false;
+    notifyListeners();
+  }
 }
